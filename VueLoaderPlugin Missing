@@ -11,7 +11,7 @@ vue-loader@15.6.4
 
 解决：
 在webpack.config.js中加入
-const { VueLoaderPlugin } = require('vue-loader');
+const { VueLoaderPlugin } = require('vue-loader/lib/plugin')
 ……
 plugins: [
   new VueLoaderPlugin(),
