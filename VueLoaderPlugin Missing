@@ -1,0 +1,22 @@
+WebPack集成vue-loader出错：
+error：vue-loader was used without the corresponding plugin. Make sure to include VueLoaderPlugin in your webpack config.
+
+version:
+webpack4.29.5
+vue-loader@15.6.4
+
+
+原因：Vue-loader在15.*之后的版本都是 vue-loader的使用都是需要伴生 VueLoaderPlugin
+官方文档 https://vue-loader.vuejs.org/migrating.html#a-plugin-is-now-required
+
+解决：
+在webpack.config.js中加入
+const { VueLoaderPlugin } = require('vue-loader');
+……
+plugins: [
+  new VueLoaderPlugin(),
+],
+module: [
+  ...
+]
+    
